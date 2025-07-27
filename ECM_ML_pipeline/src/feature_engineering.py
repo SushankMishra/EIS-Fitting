@@ -1,6 +1,6 @@
 import numpy as np
 import pandas as pd
-from scipy.integrate import simps
+from scipy.integrate import simpson
 def extract_features(df, freqs_to_sample=[1, 10, 100, 1000]):
     df = df.sort_values('frequency')  # Ensure increasing frequency
     df['Z_mag'] = np.sqrt(df['real impedance']**2 + df['imaginary impedance']**2)
@@ -22,7 +22,7 @@ def extract_features(df, freqs_to_sample=[1, 10, 100, 1000]):
     features['Z_mag_mean'] = df['Z_mag'].mean()
     features['Z_phase_mean'] = df['Z_phase'].mean()
     features['Z_phase_std'] = df['Z_phase'].std()
-    features['Nyquist_area'] = simps(y=-df['imaginary impedance'], x=df['real impedance'])  # Area under curve
+    features['Nyquist_area'] = simpson(y=-df['imaginary impedance'], x=df['real impedance'])  # Area under curve
     features['Z_mag_slope'] = np.polyfit(np.log10(df['frequency']), df['Z_mag'], 1)[0]  # Slope in log-log space
 
     return pd.DataFrame([features])
