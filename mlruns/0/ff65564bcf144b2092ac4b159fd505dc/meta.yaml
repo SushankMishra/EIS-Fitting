@@ -1,0 +1,14 @@
+artifact_uri: mlflow-artifacts:/0/ff65564bcf144b2092ac4b159fd505dc/artifacts
+end_time: 1753648612358
+entry_point_name: ''
+experiment_id: '0'
+lifecycle_stage: active
+run_id: ff65564bcf144b2092ac4b159fd505dc
+run_name: EIS Paramter Estimation
+source_name: ''
+source_type: 4
+source_version: ''
+start_time: 1753648609168
+status: 4
+tags: []
+user_id: sushankmishra
